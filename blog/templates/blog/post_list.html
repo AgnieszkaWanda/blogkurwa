@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+{% load staticfiles %}
+
+  <head>
+
+     <meta charset="utf-8">
+     <title>Agnieszki Blog o Szyciu</title>
+
+     <meta name="description" content="Kurs kroju i szycia, blog o szyciu">
+     <meta name="keywords" content="szycie, kój, kurs kroju i szycia, blog o szyciu, krawiectwo, krawiectwo miarowe">
+     <meta name="author" content="Agnieszka Szewczuk">
+
+     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+     <link rel="stylesheet" href="arkusz.css">
+     <script src="skrypt.js"></script>
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+  </head>
+  <body>
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+    
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+</body>
+
+</html>
